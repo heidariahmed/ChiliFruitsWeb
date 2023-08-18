@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Chili Fruits Web
+This is the frontend for the Chili Fruit application, which allows you to manage and update chili fruit quantities.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+The Chili Fruit Frontend is a React application that provides a user interface for managing chili fruit quantities. 
+It communicates with the backend API to fetch and update chili fruit data.
 
-## Available Scripts
+## Technologies
+React 
 
-In the project directory, you can run:
+Javascript
 
-### `yarn start`
+@mui/material
 
-Runs the app in the development mode.\
+react-router-dom
+
+## Setup
+1. Navigate to the project directory.
+2. write "yarn install / yarn " when you are in the project directory
+
+
+## Running the Application
+You can run the application using the following command:
+" yarn start "
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `yarn test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Chili Fruit List
+Displays a list of chili fruits with details such as name, origin, scoville, quantity, and unit price.
 
-### `yarn build`
+Provides a link to update the quantity for each chili fruit.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Update Quantity
+Allows users to update the quantity of a selected chili fruit.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Users can select a chili fruit from a dropdown menu and enter a new quantity.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Validates the input to ensure a valid chili fruit and a positive quantity are entered.
 
-### `yarn eject`
+Displays success or error messages upon updating the quantity.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Extra
+You can also change theme to darkmode / light mode. It also react to your computer settings, if u have dark mode on the computer it will change to darkmode and vice versa.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
