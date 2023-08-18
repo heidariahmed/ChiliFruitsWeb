@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect}  from 'react';
+import ChiliFruitList from './ChiliFruitList';
+import UpdateQuantity from './UpdateQuantity';
+import {Route, Routes } from "react-router-dom"
+import useMediaQuery from '@mui/material/useMediaQuery';
+import About from "./pages/About"
+import Navbar from './Navbar';
+import {setDarkMode} from './darkMode'
 
-function App() {
+const App = () => {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  let currentTheme = localStorage.getItem("theme");
+  if (!currentTheme) {
+    currentTheme = prefersDarkMode ? 'dark' : 'light';
+  }
+  setDarkMode(currentTheme);
+  
+  useEffect(() => {
+    setDarkMode(prefersDarkMode ? 'dark' : 'light');
+  },[prefersDarkMode])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+      <Route path="/" element={<ChiliFruitList />}/>
+      <Route path="/update/:chiliFruitId" element={<UpdateQuantity />} />
+      <Route path="/update" element={<UpdateQuantity chiliFruitId={1} />} />
+      <Route path="/about" element={<About/>} />
+      </Routes>
+
+    </>
   );
 }
 

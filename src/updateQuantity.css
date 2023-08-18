@@ -1,0 +1,41 @@
+.update-quantity-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .update-quantity-heading {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    margin-bottom: 10px;
+  }
+  
+  .select-dropdown {
+    margin-left: 10px;
+  }
+  
+  .quantity-input {
+    margin-left: 10px;
+  }
+  
+  .submit-button {
+    margin: 10px 0;
+  }
+  
+  .success-message {
+    color: green;
+    margin-top: 10px;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .backlink {
+    margin-top: 10px;
+  }
+  
