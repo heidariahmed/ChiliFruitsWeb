@@ -30,8 +30,6 @@ function UpdateQuantity() {
       setError('Please select a chili fruit');
       return;
     }
-
-    // const updatedQuantity = Math.max(parseInt(newQuantity), 0);
     
     if (selectedChiliFruit && newQuantity >= 0) {
         const updatedQuantity = Math.max(parseInt(newQuantity), 0);
@@ -45,6 +43,11 @@ function UpdateQuantity() {
         });
     
         if (response.ok) {
+          // Update the selectedChiliFruit state with the new quantity
+          setSelectedChiliFruit(prevChiliFruit => ({
+            ...prevChiliFruit,
+            quantity: updatedQuantity,
+          }));
           setSuccess(true);
           setError(null);
         } else {
@@ -60,10 +63,16 @@ function UpdateQuantity() {
     <div className="update-quantity-container">
         <h2 className="update-quantity-heading"> Update Quantity for {selectedChiliFruit ? selectedChiliFruit.name : '...'}
         </h2>
+     
       <form onSubmit={handleSubmit} className="update-form">
-      <label className="form-label">Select Chili Fruit:
+      <label className="form-label" style={{marginRight:'10px'}}>Select Chili Fruit:
           <select value={selectedChiliFruit ? selectedChiliFruit.id : ''}
-          onChange={(e) => setSelectedChiliFruit(chiliFruitsList.find(fruit => fruit.id === parseInt(e.target.value)))}
+          onChange={(e) => {
+            setSelectedChiliFruit(
+              chiliFruitsList.find(fruit => fruit.id === parseInt(e.target.value))
+            );
+            setNewQuantity(''); //Reset
+          }}
           className="select-dropdown">
           <option value="">Select...</option>
           {chiliFruitsList.map(fruit => (
@@ -71,7 +80,12 @@ function UpdateQuantity() {
            ))}
          </select>
       </label>
-      <label className="form-label" style={{marginLeft:'20px'}}>
+      {selectedChiliFruit && (
+        <p className="form-label">
+          Current Quantity for {selectedChiliFruit.name} is: {selectedChiliFruit.quantity} 
+        </p>
+      )}
+      <label className="form-label">
           New Quantity:
           <input
             type="number"
