@@ -12,15 +12,6 @@ function UpdateQuantity() {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
 
-//   useEffect(() => {
-//     fetch('http://localhost:8080/api/chilifruits')
-//       .then(response => response.json())
-//       .then(data => {
-//         setChiliFruitsList(data);
-//       })
-//       .catch(error => console.error('Error fetching data:', error));
-//   }, []);
-
   useEffect(() => {
     fetch('http://localhost:8080/api/chilifruits')
       .then(response => response.json())
@@ -32,12 +23,12 @@ function UpdateQuantity() {
       .catch(error => console.error('Error fetching data:', error));
 
     // Fetch the chili fruit details and set selectedChiliFruit here
-    fetch(`http://localhost:8080/api/chilifruits/${chiliFruitId}`)
-      .then(response => response.json())
-      .then(data => {
-        setChiliFruit(data);
-      })
-      .catch(error => console.error('Error fetching data:', error));
+    // fetch(`http://localhost:8080/api/chilifruits/${chiliFruitId}`)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     setChiliFruit(data);
+    //   })
+    //   .catch(error => console.error('Error fetching data:', error));
   }, [chiliFruitId]);
 
 
