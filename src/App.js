@@ -24,7 +24,7 @@ const App = () => {
       <Routes>
       <Route path="/" element={<ChiliFruitList />}/>
       <Route path="/update/:chiliFruitId" element={<UpdateQuantity />} />
-      <Route path="/update" element={<UpdateQuantity chiliFruitId={1} />} />
+      <Route path="/update" element={<UpdateQuantity />} />
       <Route path="/about" element={<About/>} />
       </Routes>
 
