@@ -34,7 +34,7 @@ function ChiliFruitList() {
   const [chiliFruits, setChiliFruits] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/chilifruits')
+    fetch('api/chilifruits')
       .then(response => response.json())
       .then(data => {
         setChiliFruits(data);

@@ -12,7 +12,7 @@ function UpdateQuantity() {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/chilifruits')
+    fetch('api/chilifruits')
       .then(response => response.json())
       .then(data => {
         setChiliFruitsList(data);
@@ -34,7 +34,7 @@ function UpdateQuantity() {
     if (selectedChiliFruit && newQuantity >= 0) {
         const updatedQuantity = Math.max(parseInt(newQuantity), 0);
     
-        const response = await fetch(`http://localhost:8080/api/chilifruits/${selectedChiliFruit.id}/updateQuantity`, {
+        const response = await fetch(`api/chilifruits/${selectedChiliFruit.id}/updateQuantity`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
